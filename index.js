@@ -2,7 +2,7 @@ var cwd = process.cwd();
 
 var bcs = require('./lib/bcsClient.js')
 
-module.exports = function (dest, file, settings, callback) {
+module.exports = function (dest, file, content, settings, callback) {
     if (!fis.util.is(settings, 'Array')){
         settings = [settings];
     }
@@ -13,7 +13,7 @@ module.exports = function (dest, file, settings, callback) {
     
     var to = (dest.to || '/').replace(/\/*$/, '');
     bcs.upload(
-        conf, file.getContent(), to + dest.release,
+        conf, content, to + dest.release,
         function(err, res){
             if(err || res.trim() != '0'){
                 fis.log.error('upload file [' + file.subpath + '] to [' + to +

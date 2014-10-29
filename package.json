@@ -1,6 +1,6 @@
 {
   "name": "fis-deploy-bcs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "fis bcs deploy plugin",
   "main": "index.js",
   "scripts": {
